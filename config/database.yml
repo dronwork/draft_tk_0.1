@@ -20,10 +20,21 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: main_user
+  password: samara
 
 development:
   <<: *default
-  database: draft_tk_0_1_development
+  database: draft_tk_1_development
+  username: main_user
+  password: samara
+
+test:
+  <<: *default
+  database: draft_tk_1_test
+  username: main_user
+  password: samara
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
